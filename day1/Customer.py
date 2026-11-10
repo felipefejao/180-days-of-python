@@ -37,3 +37,9 @@ class Customer:
                 "Plano Elegível": "PRO" if self.is_eligeble_for_pro(customer) else "FREE"
             })
         return retorno
+
+    def faturamento_total(self) -> float:
+        total = 0
+        for customer in self.customers:
+            total += customer['faturamento_mensal']
+        return total
